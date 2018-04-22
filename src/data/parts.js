@@ -14,7 +14,7 @@ const parts = {
     {
       id: 2,
       description: 'A friendly robot head with two eyes and a smile -- great for domestic use.',
-      title: 'Friendly',
+      title: 'Friendly Bot',
       src: images('./head-friendly.png'),
       cost: 945.0,
       type: 'heads',
@@ -42,7 +42,7 @@ const parts = {
       id: 5,
       description:
         'A robot head with three oscillating eyes -- excellent for surveillance.',
-      title: 'Surveillance',
+      title: 'Surveillance Bot',
       src: images('./head-surveillance.png'),
       type: 'heads',
       cost: 1255.5
