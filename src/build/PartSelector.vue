@@ -1,0 +1,141 @@
+<template>
+  <div class="part">
+    <img :src="selectedPart.src" title="arm"/>
+    <button @click="selectPreviousPart()" class="prev-selector">&#9650;</button>
+    <button @click="selectNextPart()" class="next-selector">&#9660;</button>
+  </div>
+</template>
+
+<script>
+import availableParts from '../data/parts';
+
+const parts = availableParts.heads;
+
+function getPreviousValidIndex(index, length) {
+  const deprecatedIndex = index - 1;
+  return deprecatedIndex < 0 ? length - 1 : deprecatedIndex;
+}
+
+function getNextValidIndex(index, length) {
+  const incrementedIndex = index + 1;
+  return incrementedIndex > length - 1 ? 0 : incrementedIndex;
+}
+
+export default {
+  data() {
+    return { selectedPartIndex: 0 };
+  },
+  computed: {
+    selectedPart() {
+      return parts[this.selectedPartIndex];
+    },
+  },
+  methods: {
+    selectNextPart() {
+      this.selectedPartIndex = getNextValidIndex(
+        this.selectedPartIndex,
+        parts.length,
+      );
+    },
+    selectPreviousPart() {
+      this.selectedPartIndex = getPreviousValidIndex(
+        this.selectedPartIndex,
+        parts.length,
+      );
+    },
+
+  },
+};
+
+</script>
+
+<style scoped>
+.part {
+  position: relative;
+  width:165px;
+  height:165px;
+  border: 3px solid #aaa;
+}
+
+.part-title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: red;
+  padding-top: 5px;
+  top: -25px;
+}
+.part img {
+  width:165px;
+}
+.top {
+  border-bottom: none;
+}
+.left {
+  border-right: none;
+}
+.right {
+  border-left: none;
+}
+.bottom {
+  border-top: none;
+}
+.left img {
+  transform: rotate(-90deg);
+}
+.right img {
+  transform: rotate(90deg);
+}
+.prev-selector {
+  position: absolute;
+  z-index:1;
+  top: -3px;
+  left: -28px;
+  width: 25px;
+  height: 171px;
+}
+.next-selector {
+  position: absolute;
+  z-index:1;
+  top: -3px;
+  right: -28px;
+  width: 25px;
+  height: 171px;
+}
+.center .prev-selector {
+  opacity:0.8;
+}
+.center .next-selector {
+  opacity:0.8;
+}
+.left .prev-selector {
+  top: -28px;
+  left: -3px;
+  width: 146px;
+  height: 25px;
+}
+.left .next-selector {
+  top: auto;
+  bottom: -28px;
+  left: -3px;
+  width: 146px;
+  height: 25px;
+}
+.right .prev-selector {
+  top: -28px;
+  left: 22px;
+  width: 146px;
+  height: 25px;
+}
+.right .next-selector {
+  top: auto;
+  bottom: -28px;
+  left: 22px;
+  width: 146px;
+  height: 25px;
+}
+.highlight {
+  border: 1px solid red;
+}
+</style>
