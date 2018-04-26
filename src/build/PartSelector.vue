@@ -103,36 +103,45 @@ export default {
   width: 25px;
   height: 171px;
 }
-.center .prev-selector {
-  opacity:0.8;
+.left .prev-selector:after,  .right .prev-selector:after{
+  content: '\25B2'
 }
-.center .next-selector {
+.left .next-selector:after, .right .next-selector:after {
+  content: '\25BC'
+}
+.top .prev-selector:after, .bottom .prev-selector:after, .center .prev-selector:after{
+  content: '\25C4'
+}
+.top .next-selector:after, .bottom .next-selector:after, .center .next-selector:after{
+  content: '\25BA'
+}
+.center .prev-selector, .center .next-selector {
   opacity:0.8;
 }
 .left .prev-selector {
   top: -28px;
   left: -3px;
-  width: 146px;
+  width: 144px;
   height: 25px;
 }
 .left .next-selector {
   top: auto;
   bottom: -28px;
   left: -3px;
-  width: 146px;
+  width: 144px;
   height: 25px;
 }
 .right .prev-selector {
   top: -28px;
-  left: 22px;
-  width: 146px;
+  left: 24px;
+  width: 144px;
   height: 25px;
 }
 .right .next-selector {
   top: auto;
   bottom: -28px;
-  left: 22px;
-  width: 146px;
+  left: 24px;
+  width: 144px;
   height: 25px;
 }
 .highlight {
