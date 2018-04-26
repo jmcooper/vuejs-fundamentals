@@ -1,8 +1,8 @@
 <template>
   <div class="part">
     <img :src="selectedPart.src" title="arm"/>
-    <button @click="selectPreviousPart()" class="prev-selector">&#9650;</button>
-    <button @click="selectNextPart()" class="next-selector">&#9660;</button>
+    <button @click="selectPreviousPart()" class="prev-selector"></button>
+    <button @click="selectNextPart()" class="next-selector"></button>
   </div>
 </template>
 
