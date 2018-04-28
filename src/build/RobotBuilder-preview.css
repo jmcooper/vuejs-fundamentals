@@ -1,0 +1,21 @@
+.preview {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  width: 210px;
+  height: 210px;
+  padding: 5px;
+}
+.preview-content {
+  border: 1px solid #999;
+}
+.preview img {
+  width: 50px;
+  height: 50px;
+}
+.rotate-right {
+  transform: rotate(90deg);
+}
+.rotate-left {
+  transform: rotate(-90deg);
+}
