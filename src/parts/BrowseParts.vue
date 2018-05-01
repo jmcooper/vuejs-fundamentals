@@ -2,10 +2,10 @@
   <div>
     <h1>Browse Parts</h1>
     <ul class="menu">
-      <li><router-link :to="{name: 'BrowseHeads'}">Heads</router-link></li>
-      <li><router-link :to="{name: 'BrowseArms'}">Arms</router-link></li>
-      <li><router-link :to="{name: 'BrowseTorsos'}">Torsos</router-link></li>
-      <li><router-link :to="{name: 'BrowseBases'}">Bases</router-link></li>
+      <li>Heads</li>
+      <li>Arms</li>
+      <li>Torsos</li>
+      <li>Bases</li>
     </ul>
   </div>
 </template>
@@ -27,6 +27,6 @@ export default {
     font-size: 20px;
   }
   a {
-    color: darkorange;
+    color: palevioletred;
   }
 </style>
