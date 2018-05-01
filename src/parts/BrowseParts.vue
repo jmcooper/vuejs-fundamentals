@@ -26,6 +26,9 @@ export default {
     margin: 0 100px;
     font-size: 20px;
   }
+  ul {
+    list-style-type: none;
+  }
   a {
     color: palevioletred;
   }
