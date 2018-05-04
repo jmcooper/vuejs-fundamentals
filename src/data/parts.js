@@ -34,7 +34,7 @@ const parts = {
       description:
         'A simple single-eyed head -- simple and inexpensive.',
       title: 'Small Cyclops',
-      src: images('./head-big-eye.png'),
+      src: images('./head-single-eye.png'),
       type: 'heads',
       cost: 750.0
     },
