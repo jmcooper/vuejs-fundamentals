@@ -1,21 +1,21 @@
-import axios from 'axios'
+import axios from 'axios';
 
 export default {
   state: {
-    user: null
+    user: null,
   },
   mutations: {
-    updateCurrentUser (state, user) {
-      state.user = user
-    }
+    updateCurrentUser(state, user) {
+      state.user = user;
+    },
   },
   getters: {
   },
   actions: {
-    signIn ({commit}) {
+    signIn({ commit }) {
       axios.post('/api/sign-in')
         .then(result => commit('updateCurrentUser', result.data))
-        .catch(console.error)
-    }
-  }
-}
+        .catch(console.error);
+    },
+  },
+};
