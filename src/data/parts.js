@@ -103,15 +103,15 @@ const parts = {
     {
       id: 2,
       description: 'A less flexible torso with a battery gauge.',
-      title: 'Gauged',
+      title: 'Rigid Gauged',
       src: images('./torso-gauged.png'),
       type: 'torsos',
       cost: 1385
     },
     {
-      id: 2,
+      id: 3,
       description: 'A simple torso with a pouch for carrying items.',
-      title: 'Gauged',
+      title: 'Pouch Gauged',
       src: images('./torso-pouch.png'),
       type: 'torsos',
       cost: 785,
