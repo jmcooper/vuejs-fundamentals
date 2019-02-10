@@ -161,4 +161,4 @@ const parts = {
     }
   ]
 }
-export default parts
+export default parts;
