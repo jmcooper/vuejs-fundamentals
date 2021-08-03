@@ -1,10 +1,10 @@
-import { reactive, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import parts from '../data/parts';
 
 const allParts = [...parts.heads, ...parts.arms, ...parts.torsos, ...parts.bases];
 
 export default function useSearch(originalSearchTerm) {
-  const results = reactive([]);
+  const results = ref([]);
 
   const searchInventory = (searchTerm) => {
     let searchResults;
@@ -17,7 +17,7 @@ export default function useSearch(originalSearchTerm) {
         (part) => part.title.toLowerCase().includes(lowerTerm),
       );
     }
-    results.splice(0, results.length, ...searchResults);
+    results.value = [...searchResults];
   };
 
   searchInventory(originalSearchTerm);

@@ -1,7 +1,7 @@
-import { reactive, computed, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 
-function filterResults(parts, filters) {
-  return parts.filter((part) => filters.every(
+function filterResults(results, filters) {
+  return results.value.filter((part) => filters.value.every(
     (filter) => {
       const filterField = Object.keys(filter)[0];
       const filterValue = filter[filterField];
@@ -11,10 +11,10 @@ function filterResults(parts, filters) {
 }
 
 export default function useFilters(searchResults) {
-  const filters = reactive([]);
+  const filters = ref([]);
 
-  const applyFilters = (filter) => filters.push(filter);
-  const clearFilters = () => filters.splice(0, filters.length);
+  const applyFilters = (filter) => filters.value.push(filter);
+  const clearFilters = () => { filters.value = []; };
 
   onMounted(() => console.log('Mounted: useFilters'));
 

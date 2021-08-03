@@ -35,14 +35,13 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import useSearch from './useSearch';
 import useFilters from './useFilters';
 import usePagination from './usePagination';
 
 export default {
   setup(props) {
-    const searchTerm = ref('');
     const { searchResults, search } = useSearch(props.searchTerm);
 
     const {
@@ -64,7 +63,6 @@ export default {
     const resultCount = computed(() => filteredResults.value.length);
 
     return {
-      searchTerm,
       pagedResults,
       search,
       filters,
