@@ -8,12 +8,6 @@ export default function usePagination(filteredSearchResults) {
 
   onMounted(() => console.log('Mounted: useSearch'));
 
-  const pagedResults = computed(() => {
-    const startIndex = (currentPage.value - 1) * pageSize;
-    const endIndex = currentPage.value * pageSize;
-    return filteredSearchResults.value.slice(startIndex, endIndex);
-  });
-
   const currentStartIndex = computed(
     () => (currentPage.value - 1) * pageSize + 1,
   );
@@ -23,6 +17,12 @@ export default function usePagination(filteredSearchResults) {
     return end > filteredSearchResults.value.length
       ? filteredSearchResults.value.length
       : end;
+  });
+
+  const pagedResults = computed(() => {
+    const startIndex = currentStartIndex.value - 1;
+    const endIndex = currentEndIndex.value - 1;
+    return filteredSearchResults.value.slice(startIndex, endIndex);
   });
 
   return {

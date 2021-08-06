@@ -21,6 +21,7 @@ export default function useSearch(originalSearchTerm) {
   };
 
   searchInventory(originalSearchTerm);
+
   onMounted(() => console.log('Mounted: useSearch'));
 
   return { searchResults: results, search: searchInventory };
