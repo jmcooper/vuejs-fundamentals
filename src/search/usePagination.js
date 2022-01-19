@@ -13,7 +13,7 @@ export default function usePagination(filteredSearchResults) {
   );
 
   const currentEndIndex = computed(() => {
-    const end = currentStartIndex.value + pageSize;
+    const end = currentStartIndex.value - 1 + pageSize;
     return end > filteredSearchResults.value.length
       ? filteredSearchResults.value.length
       : end;
@@ -21,7 +21,7 @@ export default function usePagination(filteredSearchResults) {
 
   const pagedResults = computed(() => {
     const startIndex = currentStartIndex.value - 1;
-    const endIndex = currentEndIndex.value - 1;
+    const endIndex = currentEndIndex.value;
     return filteredSearchResults.value.slice(startIndex, endIndex);
   });
 
