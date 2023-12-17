@@ -5,7 +5,7 @@ const parts = {
     {
       id: 1,
       description:
-        'A robot head with an unusually large eye and teloscpic neck -- excellent for exploring high spaces.',
+        'A robot head with an unusually large eye and telescopic neck -- excellent for exploring high spaces.',
       title: 'Large Cyclops',
       src: images('./head-big-eye.png'),
       type: 'heads',
@@ -153,7 +153,7 @@ const parts = {
     },
     {
       id: 5,
-      description: 'An inexpensive three-wheeled base. only capable of slow speeds and can only function on smooth surfaces.',
+      description: 'An inexpensive three-wheeled base. Only capable of slow speeds and can only function on smooth surfaces.',
       title: 'Triple Wheeled',
       src: images('./base-triple-wheel.png'),
       type: 'bases',
